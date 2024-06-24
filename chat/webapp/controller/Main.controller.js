@@ -57,10 +57,7 @@ sap.ui.define([
             //     content: [html1]
             // });
 
-            this.byId("contenidoM").addItem(html2);
-            
-
-            this._startListeningAnimation();
+            this.byId("contenidoM").addItem(html2); 
         }, 
 
         _startListeningAnimation: function () {
@@ -101,6 +98,9 @@ sap.ui.define([
             var oModel = this.getView().getModel("onContainer3");
             oModel.setProperty("/visibility", true); 
             oModel.setProperty("/visibilityHeadset", true); 
+
+            this._startListeningAnimation();
+            
         }, 
         sendHeadset: function () {
             
@@ -109,6 +109,8 @@ sap.ui.define([
 
             var message = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here, making it look like readable English. ";
             this.addMessage(message);
+
+            this._stopListeningAnimation();
         }, 
         onSubmitMessage: function (oEvent) {
             var sMessage = oEvent.getParameter("value");
@@ -191,9 +193,11 @@ sap.ui.define([
             if (!this._isPlaying) {
                 oIcon.setSrc("sap-icon://media-play");  
                 oModel.setProperty("/visibilityHeadset", false); 
+                this._stopListeningAnimation();
             } else {
                 oIcon.setSrc("sap-icon://media-pause");
                 oModel.setProperty("/visibilityHeadset", true); 
+                this._startListeningAnimation();
             }
         },
 
@@ -201,6 +205,8 @@ sap.ui.define([
             this._isPlaying = false;  
             var oModel = this.getView().getModel("onContainer3");
             oModel.setProperty("/visibility", false);
+
+            this._stopListeningAnimation();
             
         }
     });

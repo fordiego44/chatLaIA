@@ -128,8 +128,7 @@
                                 <core:Icon
                                     src="sap-icon://decline"
                                     class="size2"
-                                    color="#FFFFFF" 
-                                    press=".closeHeadset"> 
+                                    color="#FFFFFF" > 
                                 </core:Icon>
                             </VBox>
                         </HBox>
