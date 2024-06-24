@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <VBox class="cardChatUserGeneral" > 
+        <VBox class="cardChatUser">
+            <Text text="{jsonMessage>content}" textAlign="Begin" class="messageChatUser" />
+        </VBox>
+    </VBox>
+</core:FragmentDefinition >

@@ -1,0 +1,14 @@
+[
+    {
+        "messageID": "1",
+        "sender": "user",
+        "content": "Hola, ¿qué temperatura hace hoy en La Molina?",
+        "timestamp": "2024-06-12T10:00:00Z"
+    },
+    {
+        "messageID": "2",
+        "sender": "ia",
+        "content": "La temperatura en La Molina es de 25°C.",
+        "timestamp": "2024-06-12T10:00:05Z"
+    } 
+]

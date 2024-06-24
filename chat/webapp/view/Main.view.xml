@@ -1,0 +1,131 @@
+<mvc:View controllerName="rivercon.chat.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m" > 
+    <Page id="page" title="{i18n>title}" class="customBackground"  showHeader="false">
+        <content>
+            <VBox class="pageContainer"> 
+                <HBox  class="pageContainerStackOne" visible="{= !${onContainer3>/visibility}}">
+                    <items>
+                        <!-- 1era columna -->
+                        <VBox  class="container1" alignItems="Center" >
+                            <VBox alignItems="Center">
+                                <Text text="Conoce a LaIA"  class="tituloAvatar" textAlign="Center" />
+
+                                <Text text="by Rivercon"  class="subtitleAvatar"  textAlign="Center"/>
+                            
+                                <HBox id="contenido" class="imagenContainer" />
+                                
+                            </VBox> 
+
+                            <VBox>
+                                <Text text="Hola, preguntame lo que quieras o elige una sugerencia para empezar" class="messageAvatar"/>
+
+                                <HBox class="opcionesGeneral">
+                                    <VBox   width="50%" > 
+                                        <HBox   class="opciones margin2"  >
+                                            <Text text="¿Que día es hoy?" class="opcionesTexto" textAlign="Center"/>
+                                        </HBox>
+                                        <HBox  class="opciones">
+                                            <Text text="¿Como van mis ventas?" class="opcionesTexto" textAlign="Center"/>
+                                        </HBox> 
+                                    </VBox >
+
+                                    <VBox    width="50%" class="margin1" > 
+                                        <HBox  class="opciones margin2">
+                                            <Text text="¿Para qué es la transacción VA01?" class="opcionesTexto"  textAlign="Center"/>
+                                        </HBox>
+                                        <HBox class="opciones">
+                                            <Text text="¿De cuanto fue mi ultimo pedido?" class="opcionesTexto" textAlign="Center"/>
+                                        </HBox> 
+                                    </VBox > 
+                                </HBox> 
+                            </VBox> 
+                        </VBox>
+
+                        <!-- 2da columna -->
+                        <VBox  class="container2"> 
+
+                                <VBox class="titleMovil" >
+                                    <Text text="Conoce a LaIA"  class="tituloAvatar" textAlign="Center" /> 
+                                    <Text text="by Rivercon"  class="subtitleAvatar"  textAlign="Center"/>   
+                                </VBox> 
+
+                                <VBox  class="videoMovil" alignItems="Center"   >
+                                    <HBox id="contenidoM" class="imagenContainerMovil" />
+                                </VBox>
+                                
+                                <VBox class="cardChat" > 
+                                    <!-- lista -->
+                                    <List   >
+                                        <items >
+                                            <CustomListItem  id="listaMessage" >
+                                                
+                                            </CustomListItem>
+                                        </items>
+                                    </List>
+                                    <!-- lista  end-->
+                                </VBox> 
+                                <VBox class="cardChat2"  > 
+                                    <HBox  > 
+                                        <VBox   class="inputContainer" >
+                                            <Input placeholder="Ingresa tu pregunta..." class="inputContainerBorder" submit="onSubmitMessage" />
+                                        </VBox >
+                                        <VBox  class="paddingRight" > 
+                                            <Button   icon="sap-icon://microphone"/>
+                                        </VBox >
+                                        <VBox >
+                                            <Button   icon="sap-icon://headset"  press=".openHeadset"/>
+                                        </VBox   >
+                                    </HBox>  
+                                </VBox>  
+                        </VBox>
+                    </items>
+                </HBox>
+
+                <HBox  class="pageContainerStackTwo" visible="{= ${onContainer3>/visibility}}">
+                    <VBox class="container3"> 
+                        <VBox  id="myVBox" class="listenCircle"  />
+                            
+                        <VBox  height="100px" />
+
+                        <Text text="Escuchando" class="messageListen" />
+
+                        <HBox class="controllerOptions">
+                            <VBox  class="listenCircleOptions backgroundColorOptionsII">
+                                <core:Icon
+                                    src="sap-icon://media-pause"
+                                    class="size2"
+                                    color="#FFFFFF" > 
+                                </core:Icon>
+                            </VBox>
+                                
+                            <VBox justifyContent="Center" >
+                                <HBox > 
+                                    <core:Icon
+                                        src="sap-icon://microphone"
+                                        class="size1"
+                                        color="#FFFFFF" > 
+                                    </core:Icon> 
+                                    <VBox  class="listenCircleOptionsMini"/>
+                                    <VBox  class="listenCircleOptionsMini"/>
+                                    <VBox  class="listenCircleOptionsMini"/>
+                                    <VBox  class="listenCircleOptionsMini"/>
+                                </HBox  >
+                            </VBox>
+
+                            <VBox  class="listenCircleOptions backgroundColorOptionsX"  >
+                                <core:Icon
+                                    src="sap-icon://decline"
+                                    class="size2"
+                                    color="#FFFFFF" press=".closeHeadset"> 
+                                </core:Icon>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </HBox>
+             </VBox>
+        </content>
+    </Page>
+</mvc:View>
