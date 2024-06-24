@@ -83,43 +83,53 @@
                         </VBox>
                     </items>
                 </HBox>
-
+ 
                 <HBox  class="pageContainerStackTwo" visible="{= ${onContainer3>/visibility}}">
                     <VBox class="container3"> 
                         <VBox  id="myVBox" class="listenCircle"  />
-                            
+
+                         
+                        
                         <VBox  height="100px" />
 
-                        <Text text="Escuchando" class="messageListen" />
+                        
 
                         <HBox class="controllerOptions">
-                            <VBox  class="listenCircleOptions backgroundColorOptionsII">
+
+                            <VBox  id="myVBoxToggle" class="listenCircleOptions backgroundColorOptionsII">
                                 <core:Icon
+                                    id="toggleIcon"
                                     src="sap-icon://media-pause"
                                     class="size2"
                                     color="#FFFFFF" > 
                                 </core:Icon>
                             </VBox>
+ 
+                            
                                 
-                            <VBox justifyContent="Center" >
-                                <HBox > 
+                            <VBox justifyContent="Center" visible="{= ${onContainer3>/visibilityHeadset}}" height="130px">
+                                
+                                <Text text="Escuchando" class="messageListen" />
+
+                                <HBox alignItems="Center" height="50px"> 
                                     <core:Icon
                                         src="sap-icon://microphone"
                                         class="size1"
                                         color="#FFFFFF" > 
                                     </core:Icon> 
-                                    <VBox  class="listenCircleOptionsMini"/>
-                                    <VBox  class="listenCircleOptionsMini"/>
-                                    <VBox  class="listenCircleOptionsMini"/>
-                                    <VBox  class="listenCircleOptionsMini"/>
+                                    <VBox  id="circle1" class="listenCircleOptionsMini"/>
+                                    <VBox  id="circle2" class="listenCircleOptionsMini"/>
+                                    <VBox  id="circle3" class="listenCircleOptionsMini"/>
+                                    <VBox  id="circle4" class="listenCircleOptionsMini"/>
                                 </HBox  >
                             </VBox>
 
-                            <VBox  class="listenCircleOptions backgroundColorOptionsX"  >
+                            <VBox  id="closeVBox" class="listenCircleOptions backgroundColorOptionsX"  >
                                 <core:Icon
                                     src="sap-icon://decline"
                                     class="size2"
-                                    color="#FFFFFF" press=".closeHeadset"> 
+                                    color="#FFFFFF" 
+                                    press=".closeHeadset"> 
                                 </core:Icon>
                             </VBox>
                         </HBox>
